@@ -1,14 +1,14 @@
 package ru.holyav.springmvcapp1;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HelloController {
 
-    @GetMapping("/hello-world")
+    @RequestMapping("/submit")
     public String sayHello(){
-       return "hello-world";
+        return ("display.jsp");
     }
 
 }
