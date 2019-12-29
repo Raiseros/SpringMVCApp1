@@ -11,6 +11,8 @@
     <title></title>
 </head>
 <body>
-Hello Andrey!
+
+Hello <%= request.getAttribute("result") %> !
+
 </body>
 </html>
