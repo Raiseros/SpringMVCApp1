@@ -18,17 +18,17 @@
 <body>
 
 <p></p>
-<form action="save" method="post">
+<form:form action="saveStudent" modelAttribute="student" method="POST">
 <table>
     <tr>
         <td> Name :</td>
 
-        <td><input  type="text" name="name"/></td>
+        <td><form:input  path="name" /></td>
     </tr>
 </table>
     <p></p>
     <td> <input type="submit" value="Save" /> </td>
-</form>
+</form:form>
 
 
 

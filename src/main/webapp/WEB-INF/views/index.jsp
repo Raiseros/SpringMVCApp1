@@ -12,19 +12,21 @@
 
 
 <p></p>
-<form:form action="submitName.html" modelAttribute="student" method="post">
+<form:form action="submitName.html" modelAttribute="student" method="POST">
+<table>
+    <tr>
+        <td>Select your name :</td>
+
+        <td><form:select path="name">
+        <form:options items="${students}" itemValue="name" itemLabel="name"/>
+            </form:select>
+        </td>
+    </tr>
+</table>
+<tr>
     <table>
-        <tr>
-            <td>Select your name :</td>
-
-            <td><form:select path="name" items="${nameList}"/></td>
-        </tr>
-    </table>
-        <tr>
-            <table>
-            <td> <input type="submit" value="Submit" /> </td>
-</form:form>
-
+        <td> <input type="submit" value="Submit" /> </td>
+        </form:form>
 
   <p></p>
 <form action="registration">
