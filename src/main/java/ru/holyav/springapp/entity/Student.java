@@ -1,4 +1,4 @@
-package ru.holyav.springapp;
+package ru.holyav.springapp.entity;
 
 import javax.persistence.*;
 
@@ -9,16 +9,16 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private String id;
+    private int id;
 
     @Column(name="name")
     private String name;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

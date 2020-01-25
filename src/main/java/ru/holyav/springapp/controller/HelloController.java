@@ -1,11 +1,12 @@
-package ru.holyav.springapp;
+package ru.holyav.springapp.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+import ru.holyav.springapp.entity.Student;
+import ru.holyav.springapp.service.StudentService;
 
 import java.util.List;
 

@@ -1,8 +1,11 @@
-package ru.holyav.springapp;
+package ru.holyav.springapp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.holyav.springapp.dao.StudentDAO;
+import ru.holyav.springapp.entity.Student;
+import ru.holyav.springapp.service.StudentService;
 
 import java.util.List;
 
