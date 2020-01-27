@@ -7,7 +7,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.holyav.springapp.dao.StudentDAO;
 import ru.holyav.springapp.entity.Student;
 
 
@@ -36,6 +35,21 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public void saveStudent(Student theStudent) {
         Session currentSession = sessionFactory.getCurrentSession();
-        currentSession.save(theStudent);
+        currentSession.saveOrUpdate(theStudent);
+    }
+
+    @Override
+    public Student getStudent(int theId) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Student student = currentSession.get(Student.class, theId);
+        return student;
+    }
+
+    @Override
+    public void deleteStudent(int theId) {
+        Session currentSession = sessionFactory.getCurrentSession();
+        Query theQuery = currentSession.createQuery("delete from Student where id=:studentId");
+        theQuery.setParameter("studentId", theId);
+        theQuery.executeUpdate();
     }
 }

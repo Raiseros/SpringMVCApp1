@@ -19,19 +19,12 @@ public class HelloController {
     private StudentService studentService;
 
     @RequestMapping(value ="/", method = RequestMethod.GET)
-    public String main(Model model) {
-        List<Student> theStudents = studentService.getStudents();
-        model.addAttribute("student", new Student());
-        model.addAttribute("students", theStudents);
-        return "index";
+    public String getStudents(Model model) {
+     List<Student> theStudents = studentService.getStudents();
+     model.addAttribute("students", theStudents);
+        return "list-students";
     }
 
-
-    @RequestMapping(value = "submitName.html", method = RequestMethod.POST)
-    public String checkUser(@ModelAttribute("student") Student student) {
-        return "submit";
-
-    }
 
     @RequestMapping(value ="registration", method = RequestMethod.GET)
     public String registry(Model model) {
@@ -40,10 +33,25 @@ public class HelloController {
         return "registration";
     }
 
+    @RequestMapping(value ="formForUpdate", method = RequestMethod.GET)
+    public String update(@RequestParam("studentId") int theId, Model model) {
+        Student theStudent = studentService.getStudent(theId);
+        model.addAttribute("student", theStudent);
+        return "registration";
+    }
+
+
     @RequestMapping(value ="saveStudent", method = RequestMethod.POST)
-    public String addName(@ModelAttribute("student") Student theStudent) {
+    public String addStudent(@ModelAttribute("student") Student theStudent) {
        studentService.saveStudent(theStudent);
 
+        return "redirect:/";
+    }
+
+
+    @RequestMapping(value ="delete", method = RequestMethod.GET)
+    public String delete(@RequestParam("studentId") int theId) {
+        studentService.deleteStudent(theId);
         return "redirect:/";
     }
 }
