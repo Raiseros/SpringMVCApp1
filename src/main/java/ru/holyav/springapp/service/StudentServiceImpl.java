@@ -17,26 +17,27 @@ public class StudentServiceImpl implements StudentService {
     private StudentDAO studentDAO;
 
     @Override
-    @Transactional
     public List<Student> getStudents() {
 
         return studentDAO.getStudents();
     }
 
     @Override
-    @Transactional
     public void saveStudent(Student theStudent) {
         studentDAO.saveStudent(theStudent);
     }
 
     @Override
-    @Transactional
+    public void updateStudent(Student theStudent) {
+        studentDAO.updateStudent(theStudent);
+    }
+
+    @Override
     public Student getStudent(int theId) {
      return studentDAO.getStudent(theId);
     }
 
     @Override
-    @Transactional
     public void deleteStudent(int theId) {
         studentDAO.deleteStudent(theId);
     }

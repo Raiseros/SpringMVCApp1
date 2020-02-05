@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
-import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -31,6 +31,11 @@ public class MyConfig{
 
     @Autowired
     private Environment env;
+
+    @Bean
+    public JdbcTemplate getJdbcTemplate() throws PropertyVetoException {
+        return new JdbcTemplate(dataSource());
+    }
 
 
     @Bean
@@ -62,13 +67,6 @@ public class MyConfig{
         return sessionFactory;
     }
 
-
-    @Bean
-    public HibernateTransactionManager transactionManager() throws PropertyVetoException {
-        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(sessionFactory().getObject());
-        return transactionManager;
-    }
 
 }
 

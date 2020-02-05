@@ -43,8 +43,11 @@ public class HelloController {
 
     @RequestMapping(value ="saveStudent", method = RequestMethod.POST)
     public String addStudent(@ModelAttribute("student") Student theStudent) {
-       studentService.saveStudent(theStudent);
-
+        if(null != theStudent && theStudent.getId() > 0){
+            studentService.updateStudent(theStudent);
+        } else{
+            studentService.saveStudent(theStudent);
+        }
         return "redirect:/";
     }
 
