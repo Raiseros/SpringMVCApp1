@@ -2,13 +2,14 @@ package ru.holyav.springapp.dao;
 
 import ru.holyav.springapp.entity.Student;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface StudentDAO {
 
     public List<Student> getStudents();
 
-    public void saveStudent(Student theStudent);
+    public void saveStudent(Student theStudent) throws SQLException;
 
     public void updateStudent(Student theStudent);
 

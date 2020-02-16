@@ -1,9 +1,20 @@
 package ru.holyav.springapp;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import ru.holyav.springapp.entity.Student;
+import ru.holyav.springapp.mapper.StudentMapper;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 public class TestConnection {
+
+
     public static void main(String[] args) {
+
+
 
         String jdbcUrl = "jdbc:mysql://localhost:3306/studentdb?useSSL=false&amp&serverTimezone=UTC";
         String user = "root";

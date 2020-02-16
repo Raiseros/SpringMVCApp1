@@ -1,6 +1,7 @@
 package ru.holyav.springapp.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name="student")
@@ -9,7 +10,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private int id;
+    private long id;
 
     @Column(name="firstName")
     private String firstName;
@@ -19,6 +20,41 @@ public class Student {
 
     @Column(name="age")
     private String age;
+
+    @Column(name="password")
+    private String password;
+
+    @Transient
+    transient private String confirmPassword;
+
+    @ManyToMany
+    @JoinTable(name="student_roles", joinColumns=@JoinColumn(name="student_id"),
+            inverseJoinColumns = @JoinColumn(name="role_id"))
+    private Set<Role> roles;
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -44,11 +80,11 @@ public class Student {
         this.age = age;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.holyav.springapp.entity.Student;
 import ru.holyav.springapp.service.StudentService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 
@@ -42,7 +43,7 @@ public class HelloController {
 
 
     @RequestMapping(value ="saveStudent", method = RequestMethod.POST)
-    public String addStudent(@ModelAttribute("student") Student theStudent) {
+    public String addStudent(@ModelAttribute("student") Student theStudent) throws SQLException {
         if(null != theStudent && theStudent.getId() > 0){
             studentService.updateStudent(theStudent);
         } else{
