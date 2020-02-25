@@ -16,4 +16,6 @@ public interface StudentService {
     public Student getStudent(int theId);
 
     public void deleteStudent(int theId);
+
+    public Student findByUserName(String firstName);
 }

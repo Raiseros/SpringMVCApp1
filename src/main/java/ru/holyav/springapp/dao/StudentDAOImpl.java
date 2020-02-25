@@ -15,7 +15,7 @@ import ru.holyav.springapp.mapper.StudentMapper;
 
 
 
-import java.sql.SQLException;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -48,7 +48,7 @@ public class StudentDAOImpl implements StudentDAO {
         Role role = new Role();
         String str = theStudent.getFirstName();
 
-        if (str.equals("ADMIN")) {
+        if (str.equalsIgnoreCase("ADMIN")) {
             role.setRoleName("ADMIN");
             roles.add(role);
             theStudent.setRoles(roles);
@@ -119,8 +119,32 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public void deleteStudent(int theId) {
 
-        String sql = "DELETE FROM student WHERE id=?";
+        String sql = "DELETE student, student_roles FROM student, student_roles" +
+                " WHERE student.id=student_roles.student_id" +
+                " AND student.id=?";
         jdbcTemplate.update(sql, theId);
 
+    }
+
+    @Override
+    public Student findByUserName(String firstName) {
+        String sql = "SELECT * FROM student WHERE firstName=?";
+        return jdbcTemplate.queryForObject(sql, new StudentMapper(), firstName);
+    }
+
+    @Override
+    public String findByUserRole(String firstName) {
+        String sql = "SELECT student.id, student_roles.student_id, student_roles.role_id, roles.id, roles.roleName" +
+                "  FROM student, student_roles, roles " +
+                " WHERE student.id=student_roles.student_id AND student_roles.student_id=roles.id" +
+                " AND student.firstName=?";
+        SqlRowSet idTables =  jdbcTemplate.queryForRowSet(sql, firstName);
+        String userRole = null;
+        while (idTables.next()) {
+          userRole = idTables.getString("roleName");
+
+        }
+
+         return userRole;
     }
 }

@@ -19,6 +19,10 @@ public class HelloController {
     @Autowired
     private StudentService studentService;
 
+   /* @Autowired
+    private SecurityService securityService;*/
+
+
     @RequestMapping(value ="/", method = RequestMethod.GET)
     public String getStudents(Model model) {
      List<Student> theStudents = studentService.getStudents();
@@ -26,6 +30,16 @@ public class HelloController {
         return "list-students";
     }
 
+    @RequestMapping(value ="/access-denied", method = RequestMethod.GET)
+    public String showAccessDenied() {
+
+        return "access-denied";
+    }
+    @RequestMapping(value ="/access-accepted", method = RequestMethod.GET)
+    public String showAccessAccepted() {
+
+        return "access-accepted";
+    }
 
     @RequestMapping(value ="registration", method = RequestMethod.GET)
     public String registry(Model model) {
@@ -48,6 +62,7 @@ public class HelloController {
             studentService.updateStudent(theStudent);
         } else{
             studentService.saveStudent(theStudent);
+            //securityService.autoLogin(theStudent.getFirstName(), theStudent.getConfirmPassword());
         }
         return "redirect:/";
     }

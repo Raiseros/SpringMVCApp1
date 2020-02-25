@@ -25,7 +25,7 @@ public class Student {
     private String password;
 
     @Transient
-    transient private String confirmPassword;
+    private String confirmPassword;
 
     @ManyToMany
     @JoinTable(name="student_roles", joinColumns=@JoinColumn(name="student_id"),

@@ -1,5 +1,6 @@
 package ru.holyav.springapp.dao;
 
+
 import ru.holyav.springapp.entity.Student;
 
 import java.sql.SQLException;
@@ -16,5 +17,9 @@ public interface StudentDAO {
     public Student getStudent(int theId);
 
     public void deleteStudent(int theId);
+
+    public Student findByUserName(String firstName);
+
+    public String findByUserRole(String firstName);
 
 }
