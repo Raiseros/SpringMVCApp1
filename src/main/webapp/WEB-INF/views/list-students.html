@@ -1,44 +1,68 @@
 <!DOCTYPE HTML>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello, Student!</title>
+    <link rel="shortcut icon" th:href="@{/css/images/favicon.ico}" type="image/x-icon">
+    <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.js}" type="text/css" rel="stylesheet"/>
+</head>
 
 
 <body>
+<div class="container">
+    <h3 class="text-muted">Student Directory</h3>
+    <hr class="my-4">
+    <form action="#" th:action="@{/registration}">
+        <input type="submit" class="btn btn-success" value="New student">
+    </form>
+    <p></p>
+    <div class="table-responsive">
+        <table border="1" class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr class="d-flex">
+                <th class="table-success text-white text col-3">First Name</th>
+                <th class="table-success text-center text-white col-3">Last Name</th>
+                <th class="table-success text-center text-white col-2">Age</th>
+                <th class="table-success text-center text-white col-4">Action</th>
+            </tr>
+            </thead>
 
-<h3>Student Directory</h3>
-<hr>
-<form action="#" th:action="@{/registration}">
-<input type="submit" value="Registration">
-</form>
-<p></p>
-<table border="1">
-  <thead>
-      <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Age</th>
-          <th>Action</th>
-      </tr>
-  </thead>
+            <tbody>
 
-    <tbody>
-       <tr th:each="tempStudent : ${students}" >
-           <td th:text="${tempStudent.firstName}" />
-           <td th:text="${tempStudent.lastName}" />
-           <td th:text="${tempStudent.age}" />
+            <tr class="d-flex" th:each="tempStudent : ${students}" >
 
-           <td>
-                <a th:href="@{/formForUpdate(studentId=${tempStudent.id})}">
-               <button>Update</button></a>&nbsp;
-               <a th:href="@{/delete(studentId=${tempStudent.id})}">
-                   <button>Delete</button></a>
-           </td>
-       </tr>
-    </tbody>
+                <td class="table-warning d-inline-flex justify-content-start align-items-center col-sm-3"
+                    th:text="${tempStudent.firstName}" />
+                <td class="table-warning d-inline-flex justify-content-center align-items-center col-sm-3"
+                    th:text="${tempStudent.lastName}" />
+                <td class="table-warning d-inline-flex justify-content-center align-items-center col-2"
+                    th:text="${tempStudent.age}" />
 
-</table>
+                <td class="table-warning text-center col-4">
+
+                    <a th:href="@{/formForUpdate(studentId=${tempStudent.id})}" class="btn btn-primary btn-sm"
+                       role="button">Update</a>
 
 
+                    <a th:href="@{/delete(studentId=${tempStudent.id})}" class="btn btn-danger btn-sm"
+                       role="button">Delete</a>
+
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</div>
 </body>
 
 
