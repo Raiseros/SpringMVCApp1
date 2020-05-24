@@ -1,35 +1,36 @@
-body{
+body {
     height: 977px;
     background: radial-gradient(at top, #FEFFFF, #A7CECC);
 }
- .table-bordered{
-     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-     font-size: 14px;
-     border-collapse: separate;
-     border-spacing: 0;
-     overflow: hidden;
+
+.table-bordered {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 14px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
 }
 
 
-.d-flex{
+.d-flex {
     width: 70%;
     border-radius: 10px;
 }
 
-th{
+th {
     text-shadow: black 0.1em 0.1em 0.2em;
 }
-
-
 
 
 th:first-child, td:first-child {
     text-align: left;
 
 }
+
 th:first-child {
     border-top-left-radius: 10px;
 }
+
 th:last-child {
     border-top-right-radius: 10px;
     border-right: none;
@@ -38,38 +39,41 @@ th:last-child {
 
 tr:last-child td:first-child {
     border-radius: 0 0 0 10px;
-    -webkit-border-radius:0 0 0 10px;
-    -moz-border-radius:0 0 0 10px;
-    -ms-border-radius:0 0 0 10px;
-    -o-border-radius:0 0 0 10px;
+    -webkit-border-radius: 0 0 0 10px;
+    -moz-border-radius: 0 0 0 10px;
+    -ms-border-radius: 0 0 0 10px;
+    -o-border-radius: 0 0 0 10px;
     -khtml-border-radius: 0 0 0 10px;
 }
- tr:last-child td:last-child {
+
+tr:last-child td:last-child {
     border-radius: 0 0 10px 0;
-    -webkit-border-radius:0 0 10px 0px;
-    -moz-border-radius:0 0 10px 0px;
-    -ms-border-radius:0 0 10px 0px;
-    -o-border-radius:0 0 10px 0px;
-    -khtml-border-radius: 0 0  10px 0px;
+    -webkit-border-radius: 0 0 10px 0px;
+    -moz-border-radius: 0 0 10px 0px;
+    -ms-border-radius: 0 0 10px 0px;
+    -o-border-radius: 0 0 10px 0px;
+    -khtml-border-radius: 0 0 10px 0px;
 
 }
+
 tr td:last-child {
     border-right: none;
 }
- a{
-     width: 90px;
-     display: inline-block;
-     padding: 1px 1px;
-     margin: 1px 1px;
+
+a {
+    width: 90px;
+    display: inline-block;
+    padding: 1px 1px;
+    margin: 1px 1px;
 }
 
-.text-muted{
+.text-muted {
     font-size: 50px;
     margin-top: 10px;
     margin-left: 175px;
 }
 
-.my-4{
+.my-4 {
     border-top: 2px solid #FFFACD;
     width: 30%;
     margin-top: 0.3em;

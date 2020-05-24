@@ -2,47 +2,76 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Save Student</title>
-
+    <link rel="shortcut icon" th:href="@{/css/images/favicon.ico}" type="image/x-icon">
+    <link th:href="@{/css/form.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/css/bootstrap.min.js}" type="text/css" rel="stylesheet"/>
 </head>
 
 
 <body>
 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="card">
+                <div class="card-body">
+                    <form role="form" class="form-horizontal" action="#" th:action="@{/saveStudent}"
+                          th:object="${student}" method="POST">
 
 
-<form action="#"   th:action="@{/saveStudent}"
-                   th:object="${student}" method="POST">
-    <table>
-        <tr>
-            <td><input type="hidden" th:field="*{id}" /></td>
-        </tr>
-        <tr>
-            <td align="right">First name :</td>
-            <td><input type="text" th:field="*{firstName}" placeholder="First name"></td>
-        </tr>
-        <tr>
-            <td align="right">Last name :</td>
-            <td><input type="text" th:field="*{lastName}" placeholder="Last name"></td>
-        </tr>
-        <tr>
-            <td align="right">Age :</td>
-            <td><input type="text" th:field="*{age}" placeholder="Age"></td>
-        </tr>
-        <tr>
-            <td align="right">Password :</td>
-            <td><input type="text" th:field="*{password}" placeholder="Password"></td>
-        </tr>
+                        <input type="hidden" th:field="*{id}"/>
 
-        <tr>
-            <p></p>
-            <td align="right"><input type="submit" value="Save" /> </td>
-        </tr>
-    </table>
-</form>
+                        <div class="form-group">
+                            <label for="firstName" class="control-label col-md-7 text-danger">First name :</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control-md input-md" id="firstName"
+                                       th:field="*{firstName}"
+                                       placeholder="First name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="control-label col-md-7 text-danger">Last name :</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control-md input-md" id="lastName" th:field="*{lastName}"
+                                       placeholder="Last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="control-label col-md-7 text-danger">Age :</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control-md input-md" id="age" th:field="*{age}"
+                                       placeholder="Age">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="control-label col-md-7 text-danger">Password :</label>
+                            <div class="col-md-5">
+                                <input type="password" class="form-control-md input-md" id="password"
+                                       th:field="*{password}"
+                                       placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-success">Save Student</button>
+                        </div>
 
 
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -32,8 +32,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         Student student = studentDAO.findByUserName(firstName);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-       String role = studentDAO.findByUserRole(firstName);
-        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_"+role));
+        String role = studentDAO.findByUserRole(firstName);
+        grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_" + role));
         return new org.springframework.security.core.userdetails.User(student.getFirstName(),
                 passwordEncoder.encode(student.getPassword()), grantedAuthorities);
 

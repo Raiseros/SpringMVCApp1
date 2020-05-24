@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.holyav.springapp.dao.StudentDAO;
 import ru.holyav.springapp.entity.Student;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void saveStudent(Student theStudent) throws SQLException {
-      studentDAO.saveStudent(theStudent);
+        studentDAO.saveStudent(theStudent);
 
     }
 
@@ -35,7 +36,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getStudent(int theId) {
-     return studentDAO.getStudent(theId);
+        return studentDAO.getStudent(theId);
     }
 
     @Override
@@ -47,8 +48,6 @@ public class StudentServiceImpl implements StudentService {
     public Student findByUserName(String firstName) {
         return studentDAO.findByUserName(firstName);
     }
-
-
 
 
 }

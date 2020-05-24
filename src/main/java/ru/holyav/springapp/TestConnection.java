@@ -1,4 +1,5 @@
 package ru.holyav.springapp;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -15,19 +16,17 @@ public class TestConnection {
     public static void main(String[] args) {
 
 
-
         String jdbcUrl = "jdbc:mysql://localhost:3306/studentdb?useSSL=false&amp&serverTimezone=UTC";
         String user = "root";
         String pass = "ypzpp45xs";
-        try{
+        try {
             System.out.println("Connecting to database: " + jdbcUrl);
             Connection myConn = DriverManager.getConnection(jdbcUrl, user, pass);
 
 
             System.out.println("Connecting successful!!!");
 
-        }
-        catch (Exception exc){
+        } catch (Exception exc) {
             exc.printStackTrace();
         }
     }

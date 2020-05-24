@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-
 @Controller
 public class HelloController {
 
@@ -23,32 +22,33 @@ public class HelloController {
     private SecurityService securityService;*/
 
 
-    @RequestMapping(value ="/", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String getStudents(Model model) {
-     List<Student> theStudents = studentService.getStudents();
-     model.addAttribute("students", theStudents);
+        List<Student> theStudents = studentService.getStudents();
+        model.addAttribute("students", theStudents);
         return "list-students";
     }
 
-    @RequestMapping(value ="/access-denied", method = RequestMethod.GET)
+    @RequestMapping(value = "/access-denied", method = RequestMethod.GET)
     public String showAccessDenied() {
 
         return "access-denied";
     }
-    @RequestMapping(value ="/access-accepted", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/access-accepted", method = RequestMethod.GET)
     public String showAccessAccepted() {
 
         return "access-accepted";
     }
 
-    @RequestMapping(value ="registration", method = RequestMethod.GET)
+    @RequestMapping(value = "registration", method = RequestMethod.GET)
     public String registry(Model model) {
         Student theStudent = new Student();
         model.addAttribute("student", theStudent);
         return "registration";
     }
 
-    @RequestMapping(value ="formForUpdate", method = RequestMethod.GET)
+    @RequestMapping(value = "formForUpdate", method = RequestMethod.GET)
     public String update(@RequestParam("studentId") int theId, Model model) {
         Student theStudent = studentService.getStudent(theId);
         model.addAttribute("student", theStudent);
@@ -56,11 +56,11 @@ public class HelloController {
     }
 
 
-    @RequestMapping(value ="saveStudent", method = RequestMethod.POST)
+    @RequestMapping(value = "saveStudent", method = RequestMethod.POST)
     public String addStudent(@ModelAttribute("student") Student theStudent) throws SQLException {
-        if(null != theStudent && theStudent.getId() > 0){
+        if (null != theStudent && theStudent.getId() > 0) {
             studentService.updateStudent(theStudent);
-        } else{
+        } else {
             studentService.saveStudent(theStudent);
             //securityService.autoLogin(theStudent.getFirstName(), theStudent.getConfirmPassword());
         }
@@ -68,7 +68,7 @@ public class HelloController {
     }
 
 
-    @RequestMapping(value ="delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET)
     public String delete(@RequestParam("studentId") int theId) {
         studentService.deleteStudent(theId);
         return "redirect:/";

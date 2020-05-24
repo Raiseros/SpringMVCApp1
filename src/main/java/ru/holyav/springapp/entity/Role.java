@@ -6,18 +6,18 @@ import java.util.Set;
 
 
 @Entity
-@Table(name="roles")
+@Table(name = "roles")
 public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private long id;
 
-    @Column(name="roleName")
+    @Column(name = "roleName")
     private String roleName;
 
-    @ManyToMany(mappedBy="roles")
+    @ManyToMany(mappedBy = "roles")
     private Set<Student> students;
 
     public Role() {

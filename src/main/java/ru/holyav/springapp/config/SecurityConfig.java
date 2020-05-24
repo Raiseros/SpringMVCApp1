@@ -61,7 +61,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -70,10 +69,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .hasAnyRole("ADMIN")
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/access-accepted",true)
+                .defaultSuccessUrl("/access-accepted", true)
                 .and()
                 .exceptionHandling().accessDeniedPage("/access-denied");
-
 
 
     }

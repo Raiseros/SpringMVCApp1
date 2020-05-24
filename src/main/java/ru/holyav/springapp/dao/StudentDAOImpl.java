@@ -1,9 +1,6 @@
 package ru.holyav.springapp.dao;
 
 
-
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -12,8 +9,6 @@ import ru.holyav.springapp.entity.Role;
 import ru.holyav.springapp.entity.Student;
 import ru.holyav.springapp.mapper.RoleMapper;
 import ru.holyav.springapp.mapper.StudentMapper;
-
-
 
 
 import java.util.HashSet;
@@ -31,7 +26,6 @@ public class StudentDAOImpl implements StudentDAO {
     public StudentDAOImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-
 
 
     @Override
@@ -61,12 +55,11 @@ public class StudentDAOImpl implements StudentDAO {
 
         String sqlCheckRole = "SELECT * FROM roles WHERE roleName=?";
 
-       List<Role> CheckRoles = jdbcTemplate.query(sqlCheckRole, new RoleMapper(), new Object[]{role.getRoleName()});
+        List<Role> CheckRoles = jdbcTemplate.query(sqlCheckRole, new RoleMapper(), new Object[]{role.getRoleName()});
         if (CheckRoles.size() == 0) {
             String sql = "INSERT INTO roles (roleName) VALUE (?)";
             jdbcTemplate.update(sql, role.getRoleName());
         }
-
 
 
         String sqlStudent = "INSERT INTO student (firstName, lastName, age, password) VALUES (?, ?, ?, ?)";
@@ -74,9 +67,8 @@ public class StudentDAOImpl implements StudentDAO {
         String sqlStudentRoles = "INSERT INTO student_roles (student_id, role_id) VALUES (?, ?)";
 
 
-       jdbcTemplate.update(sqlStudent, theStudent.getFirstName(), theStudent.getLastName(),
+        jdbcTemplate.update(sqlStudent, theStudent.getFirstName(), theStudent.getLastName(),
                 theStudent.getAge(), theStudent.getPassword());
-
 
 
         String sqlIdStudent = "SELECT * FROM student WHERE firstName=? AND lastName=?";
@@ -89,14 +81,12 @@ public class StudentDAOImpl implements StudentDAO {
         Role idRole = jdbcTemplate.queryForObject(sqlIdRoleName, new RoleMapper(), new Object[]{role.getRoleName()});
 
         while (idStudent.next()) {
-            Long  fieldIdStudent = idStudent.getLong("id");
+            Long fieldIdStudent = idStudent.getLong("id");
             jdbcTemplate.update(sqlStudentRoles, fieldIdStudent, idRole.getId());
         }
 
 
     }
-
-
 
 
     @Override
@@ -136,15 +126,14 @@ public class StudentDAOImpl implements StudentDAO {
     public String findByUserRole(String firstName) {
         String sql = "SELECT student.id, student_roles.student_id, student_roles.role_id, roles.id, roles.roleName" +
                 "  FROM student, student_roles, roles " +
-                " WHERE student.id=student_roles.student_id AND student_roles.student_id=roles.id" +
+                " WHERE student.id=student_roles.student_id AND student_roles.role_id=roles.id" +
                 " AND student.firstName=?";
-        SqlRowSet idTables =  jdbcTemplate.queryForRowSet(sql, firstName);
+        SqlRowSet idTables = jdbcTemplate.queryForRowSet(sql, firstName);
         String userRole = null;
         while (idTables.next()) {
-          userRole = idTables.getString("roleName");
-
+            userRole = idTables.getString("roleName");
         }
+        return userRole;
 
-         return userRole;
     }
 }

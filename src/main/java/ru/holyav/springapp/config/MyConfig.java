@@ -25,8 +25,8 @@ import java.util.Properties;
 @ComponentScan(basePackages = "ru.holyav.springapp")
 @EnableTransactionManagement
 @PropertySource("classpath:application.properties")
-public class MyConfig{
-    public MyConfig(){
+public class MyConfig {
+    public MyConfig() {
     }
 
 
@@ -37,7 +37,6 @@ public class MyConfig{
     public JdbcTemplate getJdbcTemplate() throws PropertyVetoException {
         return new JdbcTemplate(dataSource());
     }
-
 
 
     @Bean
@@ -52,14 +51,14 @@ public class MyConfig{
         dataSource.setMaxPoolSize(Integer.parseInt(Objects.requireNonNull(env.getProperty("database.maxPoolSize"))));
         dataSource.setMaxIdleTime(Integer.parseInt(Objects.requireNonNull(env.getProperty("database.maxIdleTime"))));
         return dataSource;
-  }
+    }
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() throws PropertyVetoException {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-      sessionFactory.setPackagesToScan(
-              new String[] {"ru.holyav.springapp"});
+        sessionFactory.setPackagesToScan(
+                new String[]{"ru.holyav.springapp"});
         Properties hibernateProperties = new Properties();
         hibernateProperties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
         hibernateProperties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
@@ -69,15 +68,13 @@ public class MyConfig{
         return sessionFactory;
     }
 
-     @Bean
-     public HibernateTransactionManager transactionManager() throws PropertyVetoException {
-         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-         transactionManager.setSessionFactory(sessionFactory().getObject());
-         return  transactionManager;
+    @Bean
+    public HibernateTransactionManager transactionManager() throws PropertyVetoException {
+        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
+        transactionManager.setSessionFactory(sessionFactory().getObject());
+        return transactionManager;
 
-     }
-
-
+    }
 
 
 }
