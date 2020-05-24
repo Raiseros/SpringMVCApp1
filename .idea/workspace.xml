@@ -7,7 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0500d5eb-a208-4399-8d08-a18d8ab0238b" name="Default Changelist" comment="9">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/denied.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/denied.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/holyav/springapp/config/MyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/holyav/springapp/config/MyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/holyav/springapp/config/MyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/WEB-INF/classes/ru/holyav/springapp/config/MyConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-mvc-app1/css/denied.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/spring-mvc-app1/css/denied.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,11 +46,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/css/denied.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="498">
+            <state relative-caret-position="1650">
               <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,12 +135,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/list-students.html" />
         <option value="$PROJECT_DIR$/src/main/resources/application-dev.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/list-students.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-accepted.html" />
-        <option value="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/SecurityWebApplicationInitializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/WebConfig.java" />
@@ -130,6 +156,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/form.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/denied.css" />
+        <option value="$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -310,13 +338,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590338969635" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1590348583585" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/crudloginform/crudloginform" />
     <property name="nodejs.protractor.protractor_package" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -665,7 +694,7 @@
       <workItem from="1590101946297" duration="8915000" />
       <workItem from="1590188819700" duration="10225000" />
       <workItem from="1590228868960" duration="25061000" />
-      <workItem from="1590318212465" duration="13457000" />
+      <workItem from="1590318212465" duration="18370000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1577616174289</created>
@@ -769,7 +798,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="667941000" />
+    <option name="totallyTimeSpent" value="672854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1078,16 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
@@ -1211,13 +1230,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1272,8 +1284,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/denied.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
+        <state relative-caret-position="1650">
           <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ru/holyav/springapp/config/MyConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
