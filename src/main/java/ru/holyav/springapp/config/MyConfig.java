@@ -44,9 +44,9 @@ public class MyConfig {
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
 
         dataSource.setDriverClass(env.getProperty("database.driver"));
-        dataSource.setJdbcUrl(env.getProperty("DATABASE_URL"));
-        dataSource.setUser(env.getProperty("DATABASE_USERNAME"));
-        dataSource.setPassword(env.getProperty("DATABASE_PASSWORD"));
+        dataSource.setJdbcUrl(env.getProperty("CLEARDB_DATABASE_URL"));
+        dataSource.setUser(env.getProperty("database.username"));
+        dataSource.setPassword(env.getProperty("database.password"));
         dataSource.setMinPoolSize(Integer.parseInt(Objects.requireNonNull(env.getProperty("database.minPoolSize"))));
         dataSource.setMaxPoolSize(Integer.parseInt(Objects.requireNonNull(env.getProperty("database.maxPoolSize"))));
         dataSource.setMaxIdleTime(Integer.parseInt(Objects.requireNonNull(env.getProperty("database.maxIdleTime"))));
